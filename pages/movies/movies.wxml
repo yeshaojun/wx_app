@@ -1,0 +1,22 @@
+<import src="./movie-list/movie-list-template.wxml" />
+<import src="./movie-grid/movie-grid-template.wxml" />
+<view class="search">
+  <icon type="search" size='13' color='#405f80' class="search-img"></icon>
+  <input type="text" src='' placeholder='复仇者联盟、后来的我们' placeholder-class='placeholder' bindfocus='onBindFocus' bindconfirm="onBindChange"></input>
+  <image src="/img/icon/xx.png" bindtap='onCancelImgTap' wx:if="{{searchShow}}" class="xx-img"></image>
+</view>
+<view wx:if="{{containerShow}}" class='container'>
+  <view class="movies-template">
+    <template is="movieListTemplate" data="{{...isTheaters}}"/>
+  </view>
+  <view class="movies-template">
+    <template is="movieListTemplate" data="{{...comingSoon}}"/>
+  </view>
+  <view class="movies-template">
+    <template is="movieListTemplate" data="{{...topUrl}}"/>
+  </view>
+</view>
+
+<view wx:if="{{searchShow}}" class='search-pannel'>
+  <template is="movieGridTemplate" data="{{...searchResult}}"/>
+</view>

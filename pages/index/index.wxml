@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="usermotto">
+    <text class="user-motto" bindtap='onTap'>开启小程序之旅</text>
+  </view>
+</view>
+
